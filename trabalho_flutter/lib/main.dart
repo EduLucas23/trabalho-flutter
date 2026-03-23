@@ -4,10 +4,12 @@ void main(){
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: Text("teste")
+        appBar: AppBar(
+          backgroundColor: Colors.lightBlue,
+          title: Text("Nome do meu App - Minha Propriedade Intelectual"),
           
         ),
-        
+        body: Text("teste")
     )
   );
 }
