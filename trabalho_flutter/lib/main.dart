@@ -6,10 +6,17 @@ void main(){
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
-          title: Text("Nome do meu App - Minha Propriedade Intelectual"),
+          title: Center(
+            child: Text("Nome do meu App - Minha Propriedade Intelectual")),
           
         ),
-        body: Text("teste")
-    )
+        body: Column(
+          children: [
+            Text("teste"),
+            Text("23/03/2026")
+          ],
+        )
+      )
+     ),
   );
 }
