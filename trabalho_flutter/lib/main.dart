@@ -10,12 +10,14 @@ void main(){
             child: Text("Nome do meu App - Minha Propriedade Intelectual")),
           
         ),
-        body: Column(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("teste"),
             Text("23/03/2026")
           ],
-        )
+        ))
       )
      ),
   );
