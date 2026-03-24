@@ -11,11 +11,11 @@ void main(){
           
         ),
         body: Center(
-          child: Column(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("teste"),
-            Text("23/03/2026")
+            Icon(Icons.add)
           ],
         ))
       )
