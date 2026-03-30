@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main(){
-  runApp(
-    MaterialApp(
+  runApp(MeuApp());
+}
+
+
+
+class MeuApp extends StatelessWidget{
+  MeuApp({super.key});
+  
+  @override
+    Widget build(BuildContext contexts){
+    return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
@@ -19,6 +28,6 @@ void main(){
           ],
         ))
       )
-     ),
-  );
+     );
+  }
 }
