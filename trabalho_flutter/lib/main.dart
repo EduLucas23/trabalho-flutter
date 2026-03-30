@@ -15,7 +15,7 @@ void main(){
             mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("teste"),
-            Icon(Icons.add)
+            Icon(Icons.add_alarm_sharp)
           ],
         ))
       )
