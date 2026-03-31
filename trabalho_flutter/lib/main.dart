@@ -35,6 +35,7 @@ class PaginaInicial extends StatefulWidget{
 class _PaginaInicialState extends State<PaginaInicial>{
 
 String texto = "Olá Mundo!";
+int contador = 0;
 
   @override
     Widget build(BuildContext context){
@@ -47,7 +48,8 @@ String texto = "Olá Mundo!";
           child: Text("Mudar Texto"),
           onPressed: () {
             setState(() {
-              texto = "Texto Alterado!";
+              texto = "Você alterou o texto $contador vezes!";
+              contador++;
             });
             },
         )
