@@ -48,8 +48,12 @@ int contador = 0;
           child: Text("Mudar Texto"),
           onPressed: () {
             setState(() {
-              texto = "Você alterou o texto $contador vezes!";
               contador++;
+              if (contador == 1) {
+                texto = "Você alterou o texto $contador vez!";
+              } else {
+                texto = "Você alterou o texto $contador vezes!";
+              }
             });
             },
         )
