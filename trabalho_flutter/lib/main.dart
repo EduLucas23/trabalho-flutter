@@ -50,9 +50,9 @@ int contador = 0;
             setState(() {
               contador++;
               if (contador == 1) {
-                texto = "Você alterou o texto $contador vez!";
+                texto = "Você alterou o texto ${contador*2} vez!";
               } else {
-                texto = "Você alterou o texto $contador vezes!";
+                texto = "Você alterou o texto ${contador*2} vezes!";
               }
             });
             },
