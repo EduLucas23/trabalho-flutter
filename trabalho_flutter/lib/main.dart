@@ -8,7 +8,7 @@ void main(){
 
 class MeuApp extends StatelessWidget{
   MeuApp({super.key});
-  
+
   @override
     Widget build(BuildContext contexts){
     return MaterialApp(
@@ -19,15 +19,40 @@ class MeuApp extends StatelessWidget{
             child: Text("Nome do meu App - Minha Propriedade Intelectual")),
           
         ),
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("teste"),
-            Icon(Icons.add_alarm_sharp)
-          ],
-        ))
+        body: PaginaInicial(),
       )
      );
   }
+}
+
+class PaginaInicial extends StatefulWidget{
+ const PaginaInicial({super.key});
+
+  @override
+    State<PaginaInicial> createState() => _PaginaInicialState();
+}
+
+class _PaginaInicialState extends State<PaginaInicial>{
+
+String texto = "Olá Mundo!";
+
+  @override
+    Widget build(BuildContext context){
+   return Center(
+     child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(texto),
+        ElevatedButton(
+          child: Text("Mudar Texto"),
+          onPressed: () {
+            setState(() {
+              texto = "Texto Alterado!";
+            });
+            },
+        )
+      ],
+      ),
+     );
+    }
 }
