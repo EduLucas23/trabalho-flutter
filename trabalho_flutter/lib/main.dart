@@ -24,41 +24,68 @@ class MeuApp extends StatelessWidget{
      );
   }
 }
-
-class PaginaInicial extends StatefulWidget{
- const PaginaInicial({super.key});
+class PaginaInicial extends StatefulWidget {
+  const PaginaInicial({super.key});
 
   @override
-    State<PaginaInicial> createState() => _PaginaInicialState();
+  State<PaginaInicial> createState() => _PaginaInicialState();
 }
 
-class _PaginaInicialState extends State<PaginaInicial>{
-
-String texto = "Olá Mundo!";
-int contador = 0;
+class _PaginaInicialState extends State<PaginaInicial> {
+  String texto = "Olá Mundo!";
+  int contador = 0;
+  String nome = "Olá!";
+  final TextEditingController _textEditingController = TextEditingController();
 
   @override
-    Widget build(BuildContext context){
-   return Center(
-     child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(texto),
-        ElevatedButton(
-          child: Text("Mudar Texto"),
-          onPressed: () {
-            setState(() {
-              contador++;
-              if (contador == 1) {
-                texto = "Você alterou o texto ${contador*2} vez!";
-              } else {
-                texto = "Você alterou o texto ${contador*2} vezes!";
+  void dispose() {
+    _textEditingController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(texto),
+          TextField(
+            controller: _textEditingController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(35)),
+                
+              ),
+              labelText: 'nome',
+            ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).cardColor,
+            ),
+            onPressed: () {
+              //print(_textEditingController.text);
+              nome  = _textEditingController.text;
+              setState(() {
+                //contador++;
+               // texto = contador == 1
+                //    ? "Você alterou o texto ${contador * 2} vez!"
+                 //   : "Você alterou o texto ${contador * 2} vezes!";
+
+                    if (nome.isEmpty) {
+                      texto = "Olá! ninguém?";
+                    } else {
+                   texto  = "Olá, $nome";
               }
-            });
+              });
+           
             },
-        )
-      ],
+
+            child: const Text("Mudar Texto"),
+          ),
+        ],
       ),
-     );
-    }
+    );
+  }
 }
